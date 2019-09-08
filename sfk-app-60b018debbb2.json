@@ -1,8 +1,8 @@
 {
   "type": "service_account",
   "project_id": "sfk-app",
-  "private_key_id": "60b018debbb2534a9dccaae7bff5748468f8a4f4",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCu5Uoi7zbipvOt\nlUc7qnYsuBu9BI1mdQ6KcbpSWm8M/+8h7q09db/vaoF6VCjAsmsXmcmBIZjYVER5\nSK+fj9Hv1XoxGws2rl8PAMVYJNlM5njNXXKg7e5Tbi5+zZDQo9R8qsShQyRMg7Mb\nfHMdLOzhD9Xu4BZs3BqnXMyPRHKY5HSl8PtgolumnazHdJp3S/yAzhtPsPiK6mYm\nVJ14O/w7wLcaG1J0ONnQfMmDVGzrVua3dlHBpJOUG5SFn5kb6P5LRzhYWpLjh1LP\nKGWI3MgHo0Hp+YZomYDKez8P7TGLOpwV4eK4FGEhPdNRhFlNad9O3qqULhKwOxa/\n0Qol2sntAgMBAAECggEANFnb3CMgma2BqUbSwLBgmTguzWBsduu5A4XRUM9TCGAf\nk1efMZNqdV67DQPeAvglCDZ3U5jb6H0o1ekE8M0a+SA8aDCBJcgCGjqP17eH9/XQ\n2SAMrNErknubnUco/trbQsnW+7JeTizp0uNojaYh7ahQ0CTxcXpc3BXyATxq1Qqm\ngzIw2hjNcfrT8Qy8QQcnd0Zae6S93/vAwpYTizY/rFWUB7mZ+owDotlrZSBjdAqd\nyDFJyx2n2fFzZtAv01810wl+fKRjKmmYQRkZYB83jbyIMl0DgiPDPMOc3PdBgomH\nQcQJb5BqVGUGwRnnIKJAR6pR6/gqub/nrzaBnJG1fQKBgQDbI1CB/SWUYQrsmMsJ\na8rNouiLsFFfxzscVUPInAZvGbXjoCSZ8F3qvVO4AqH2PV8pgwFLjiBFaTxVkwBF\nq76sXXAa/dDPsFGopW0tJuB4Di/tPr50PfI1mSTjX9/gNibMY87kMdifCHybWJDo\nMjIAzuFCgmkmn+6kMaLEpciwywKBgQDMUMezmboyfh1rh3VI4c4KYv68yc8MmVRf\nfPYT1dSa5Jz0RFIFkqQOgDRn0hryVbkuHX0GJM3AKeOtqOH5/J74d/7YRAQA47nM\nob8ntxOITGUED5udp7Gz30gPcU54PJ8RzXZNJ72yjoaIAYDLoGM42HXcz2IZYxeQ\nSBL8hjMxJwKBgExHzbWCBjvRT/kt8rdT02OjiqlddeYONxBUyeSiE0dHPt5+l18S\noc6dmu/Z0sEheee8V44Saj9fM4ZiRlz6PMRJPkXXBoHVUYeQFiH6f3arEZnXFnrm\nOVLY/VM8w3SLxROuxoz+oPYzARUeTkrVdjx7x0Pcm3e7glmbgZpMT0DjAoGAJA35\nP7NYDUL+FBSiWMsoHeMcStpeBD4minc1wYhRbUf8fopz4vHeq4RqOwvzn2ILPJ0N\njAEAofGCcQnFXuT6dKRQP3+5KSMGjZrZbbu74aiBhvbuIiMOk8xKHheDnmosM+sK\n/lCOBC1shiGlxck22TgxjFa4W/yFkvt1BkT0Ua8CgYEAqmdE1z13VRV8RR/9VFE9\nbJ5nAINzF+Yr+p8ccAyK2PoOKftPQ6UCEB4GF5A5G++gsitBb9sxBPeM5HIwz6zY\nzxZTxt39IjYlF+YwCYwfRQawM9PJ3E4aUiBWzUI6Ir7L/9YP1H4jcJG3jrkHCLhX\n9S5F7R6mBBkHrs9jWIegKHw=\n-----END PRIVATE KEY-----\n",
+  "private_key_id": "HIDDEN",
+  "private_key": "HIDDEN",
   "client_email": "sfk-app@appspot.gserviceaccount.com",
   "client_id": "112907517171328218149",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
