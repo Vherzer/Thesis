@@ -1,3 +1,5 @@
+/*-------Component to add a new item to the database---------------------------*/
+
 import React from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
@@ -15,6 +17,7 @@ class AddNewItem extends React.Component {
   }
 }
 
+/*------------------------STYLES ---------------------------------------------*/
 const styles = StyleSheet.create({
   logoheader:{
     maxHeight:100,

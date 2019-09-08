@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SFKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SFKTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -19,6 +18,8 @@
 		2DCD954D1E0B4F2C00145EB5 /* SFKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SFKTests.m */; };
 		58A06BFD2316B336003CBB95 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 58A06BFC2316B336003CBB95 /* www */; };
 		58A06BFF231884D2003CBB95 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 58A06BFE231884D2003CBB95 /* www */; };
+		58C779FB23257BC900C9B28E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58C779FA23257BC900C9B28E /* GoogleService-Info.plist */; };
+		58C779FD23258F1700C9B28E /* react-native-fs in Resources */ = {isa = PBXBuildFile; fileRef = 58C779FC23258F1700C9B28E /* react-native-fs */; };
 		828EC5442D42BCE57535B5A6 /* libPods-SFK-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 926C316EFE82281292716371 /* libPods-SFK-tvOSTests.a */; };
 		C8887D8CDC64A56075E55D92 /* libPods-SFK-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8748D1FD74B3583436F848EA /* libPods-SFK-tvOS.a */; };
 		F9DB5F467F7B2D3C20E1D9B4 /* libPods-SFKTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 717C475514D83E13D50AF320 /* libPods-SFKTests.a */; };
@@ -57,6 +58,8 @@
 		2D02E4901E0B4A5D006451C7 /* SFK-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SFK-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A06BFC2316B336003CBB95 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../www; sourceTree = "<group>"; };
 		58A06BFE231884D2003CBB95 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = SFK/www; sourceTree = "<group>"; };
+		58C779FA23257BC900C9B28E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		58C779FC23258F1700C9B28E /* react-native-fs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "react-native-fs"; path = "../node_modules/react-native-fs"; sourceTree = "<group>"; };
 		717C475514D83E13D50AF320 /* libPods-SFKTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SFKTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC3BEB221EDE2D45A126C1C /* Pods-SFKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFKTests.debug.xcconfig"; path = "Target Support Files/Pods-SFKTests/Pods-SFKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86EBA479458FA317F67FE53A /* Pods-SFKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFKTests.release.xcconfig"; path = "Target Support Files/Pods-SFKTests/Pods-SFKTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 		13B07FAE1A68108700A75B9A /* SFK */ = {
 			isa = PBXGroup;
 			children = (
+				58C779FC23258F1700C9B28E /* react-native-fs */,
+				58C779FA23257BC900C9B28E /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -235,6 +240,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				743C58C98E400E50690C9122 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,6 +325,8 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* SFK */,
@@ -328,6 +336,9 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00E356EC1AD99517003FC87E /* Resources */ = {
@@ -343,6 +354,8 @@
 			files = (
 				58A06BFF231884D2003CBB95 /* www in Resources */,
 				58A06BFD2316B336003CBB95 /* www in Resources */,
+				58C779FD23258F1700C9B28E /* react-native-fs in Resources */,
+				58C779FB23257BC900C9B28E /* GoogleService-Info.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
@@ -415,6 +428,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		743C58C98E400E50690C9122 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SFK/Pods-SFK-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SFK/Pods-SFK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		76AB0B40ED3F4694CBC9879C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -605,6 +636,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFK.app/SFK";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -625,6 +659,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFK.app/SFK";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -645,6 +682,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SFK;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -664,6 +704,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SFK;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -692,6 +735,9 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -720,6 +766,9 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -747,6 +796,9 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFK-tvOS.app/SFK-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -774,6 +826,9 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFK-tvOS.app/SFK-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};

@@ -1,3 +1,4 @@
+/*-------Component to return to a previously started report-------------------*/
 import React from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking, FlatList } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
@@ -36,7 +37,7 @@ class CurrentReport extends React.Component {
 }
 
 
-
+/*------------------------STYLES ---------------------------------------------*/
 const styles = StyleSheet.create({
   logoheader:{
     maxHeight:100,

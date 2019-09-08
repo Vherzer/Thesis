@@ -27,10 +27,14 @@ target 'SFK' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  
   pod 'react-native-camera', :path => '../node_modules/react-native-camera'
-
   pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
-
   target 'SFKTests' do
     inherit! :search_paths
     # Pods for testing

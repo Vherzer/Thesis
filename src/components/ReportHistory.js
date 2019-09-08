@@ -1,3 +1,4 @@
+/*-------Component to view all completed reports in the database----------------*/
 import React from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
@@ -15,7 +16,7 @@ class ReportHistory extends React.Component {
   }
 }
 
-
+/*------------------------STYLES ---------------------------------------------*/
 const styles = StyleSheet.create({
   logoheader:{
     maxHeight:100,

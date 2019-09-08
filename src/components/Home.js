@@ -1,3 +1,4 @@
+/*-------Home component with menu to move around application-------------------*/
 import React from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
@@ -66,6 +67,7 @@ class Home extends React.Component {
   }
 };
 
+/*------------------------STYLES ---------------------------------------------*/
 const styles = StyleSheet.create({
   container:{
     flex: 1,

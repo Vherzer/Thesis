@@ -2,6 +2,7 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
+/*-----------------Import of components needed---------------------------------*/
 import Home from './src/components/Home';
 import ViewAllItems from './src/components/ViewAllItems';
 import StartNewReport from './src/components/StartNewReport';
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
   },
 });
 
+/*---Navigation through the various screens is controlled with AppNavigator-----*/
 const AppNavigator = createStackNavigator({
   login: Login,
   home: Home,
@@ -60,5 +62,5 @@ const AppNavigator = createStackNavigator({
 {
   initialRouteName: 'home',
   });
-  
+
 export default createAppContainer(AppNavigator)
