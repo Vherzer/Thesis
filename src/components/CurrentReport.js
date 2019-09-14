@@ -14,13 +14,16 @@ class CurrentReport extends React.Component {
     ];
 
     return (
-      <View>
+      <View style={styles.currentreportContainer}>
         <View style={styles.logoheader}>
           <Image
             source= {require('../logo.jpg')}
             style={{height:100}}
             />
         </View>
+
+        <Text style={{fontSize:22, textAlign:'center', color: '#FFFFFF', paddingTop: 15}}>Scannen Sie den QR-Code</Text>
+
         <View>
           <FlatList
             keyExtractor={test => test.id}
@@ -42,7 +45,11 @@ const styles = StyleSheet.create({
     maxHeight:100,
   },
   list:{
-    marginVertical: 50
+    marginVertical: 50,
+    color: "#FFFFFF",
+  },
+  currentreportContainer:{
+    backgroundColor: "#252525"
   }
 });
 

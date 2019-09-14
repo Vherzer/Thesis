@@ -3,6 +3,13 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 target 'SFK' do
   # Pods for SFK
+  # pod 'Firebase/Core', '~> 6.8.0'
+  # pod 'Firebase/Auth'
+  # pod 'Firebase/Firestore', '~> 5.3.0'
+  # pod 'Firebase/Analytics'
+  # pod 'Firebase/Storage'
+#  pod 'RNFirebase'
+#  pod 'RNFBStorage', :path => '../node_modules/@react-native-firebase/storage/ios'
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/React'
   pod 'React-DevSupport', :path => '../node_modules/react-native/React'
@@ -30,6 +37,8 @@ target 'SFK' do
   pod 'react-native-camera', :path => '../node_modules/react-native-camera'
 
   pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   target 'SFKTests' do
     inherit! :search_paths

@@ -38,7 +38,7 @@ class StartNewReport extends React.Component {
     if (!this.state.Start_Scanner){
 
       return (
-        <View>
+        <View style={styles.startnewreportContainer}>
           <View>
             <View style={styles.logoheader}>
               <Image
@@ -47,9 +47,9 @@ class StartNewReport extends React.Component {
                 />
             </View>
 
+            <Text style={{fontSize:22, textAlign:'center', color: '#FFFFFF', paddingTop: 15}}>Scannen Sie den QR-Code</Text>
 
             <View style={styles.MainContainer}>
-              <Text style={{fontSize:22, textAlign:'center'}}>QR Code Scanner</Text>
               <Text style={styles.QR_text}>
                 {this.state.QR_Code_Value ? 'Scanned QR Code: ' + this.state.QR_Code_Value : ''}
               </Text>
@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
     paddingTop:(Platform.OS) ==='ios' ? 20 : 0,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#2B2B2B'
   },
   QR_text:{
     color: '#000',
@@ -109,6 +110,9 @@ const styles = StyleSheet.create({
     width: 300,
     marginTop: 14
   },
+  startnewreportContainer:{
+    backgroundColor: "#252525"
+  }
 });
 
 export default StartNewReport;

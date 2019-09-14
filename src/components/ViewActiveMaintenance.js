@@ -6,13 +6,14 @@ import { createAppContainer, createStackNavigator, StackActions, NavigationActio
 class ViewActiveMaintenance extends React.Component {
   render(){
     return (
-      <View>
+      <View style={styles.allmaintenanceContainer}>
         <View style={styles.logoheader}>
           <Image
             source= {require('../logo.jpg')}
             style={{height:100}}
             />
         </View>
+        <Text style={{fontSize:22, textAlign:'center', color: '#FFFFFF', paddingTop: 15}}>Aktive Wartung</Text>
         <Button
           onPress={() => console.log('testing')}
           title="testttinngggg"
@@ -30,6 +31,9 @@ const styles = StyleSheet.create({
   logoheader:{
     maxHeight:100,
   },
+  allmaintenanceContainer:{
+    backgroundColor: "#252525"
+  }
 });
 
 export default ViewActiveMaintenance;

@@ -16,37 +16,37 @@ class Home extends React.Component {
         <View style={styles.homeboxes}>
           <View style={styles.homebox}>
               <TouchableOpacity onPress={() => this.props.navigation.navigate('newreport')}>
-                <Text style={{color:'#292929', backgroundColor:'#22bd53', textAlign: 'center', height:'100%', fontSize: 24, paddingTop: 40 }}> Start new maintenance check </Text>
+                <Text style={{color:'#292929', backgroundColor:'#40C057', textAlign: 'center', height:'100%', fontSize: 20, paddingTop: 40 }}>Neue Wartungsprüfung starten</Text>
               </TouchableOpacity>
           </View>
 
           <View style={styles.homebox}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('activemaintenance')}>
-              <Text style={{color:'#292929', backgroundColor:'#e03428', textAlign: 'center',height:'100%', fontSize: 24, paddingTop: 40}}> Active maintenance </Text>
+              <Text style={{color:'#292929', backgroundColor:'#FA5252', textAlign: 'center',height:'100%', fontSize: 20, paddingTop: 65}}>Aktive Wartung</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.homebox}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('returntocurrentreport')}>
-              <Text style={{color:'#292929', backgroundColor:'#fc8e2d', textAlign: 'center',height:'100%', fontSize: 24, paddingTop: 40}}> Return to previous report</Text>
+              <Text style={{color:'#292929', backgroundColor:'#FD7E14', textAlign: 'center',height:'100%', fontSize: 20, paddingTop: 45}}>Zurück zur vorherigen Wartungsprüfung</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.homebox}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('addnewitem')}>
-              <Text style={{color:'#292929', backgroundColor:'#2d8ee3', textAlign: 'center',height:'100%', fontSize: 24, paddingTop: 40}}> Add new Item</Text>
+              <Text style={{color:'#292929', backgroundColor:'#228BE6', textAlign: 'center',height:'100%', fontSize: 20, paddingTop: 60}}>Neuen Artikel hinzufügen</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.homebox}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('reporthistory')}>
-              <Text style={{color:'#292929', backgroundColor:'#ffffff', textAlign: 'center',height:'100%', fontSize: 24, paddingTop: 40}}> Report History</Text>
+              <Text style={{color:'#292929', backgroundColor:'#ffffff', textAlign: 'center',height:'100%', fontSize: 20, paddingTop: 65}}>Berichtsverlauf</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.homebox}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('viewallitems')}>
-              <Text style={{color:'#292929', backgroundColor:'#999999', textAlign: 'center',height:'100%', fontSize: 24, paddingTop: 40}}> View all Items</Text>
+              <Text style={{color:'#292929', backgroundColor:'#868E96', textAlign: 'center',height:'100%', fontSize: 20, paddingTop: 60}}>Alle Artikel anzeigen</Text>
             </TouchableOpacity>
           </View>
 
