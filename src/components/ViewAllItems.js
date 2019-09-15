@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking, FlatList, AsyncStorage, KeyboardAvoidingView } from 'react-native';
+import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking, FlatList, AsyncStorage, KeyboardAvoidingView, Card } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 import firebase from 'firebase';
 import { SearchBar } from 'react-native-elements';
@@ -13,6 +13,7 @@ import { SearchBar } from 'react-native-elements';
 //     }
 //   });
 
+  var itm = [];
   class ViewAllItems extends React.Component {
     state = {
       search: '',
@@ -20,6 +21,8 @@ import { SearchBar } from 'react-native-elements';
     updateSearch = search => {
       this.setState({ search });
     };
+
+
 /*-------------------FIREBASE DATABASE MOUTING --------------------------------*/
 
     componentDidMount(){
@@ -36,44 +39,45 @@ import { SearchBar } from 'react-native-elements';
 
 /*------------------------ADD TO DATABASE -------------------------------------*/
 
-      firebase.database().ref('items/4').set(
-        {
-          type: 'FL',
-          location: 'in my mouth'
-        }
-      ).then(() => {
-        console.log('inserted');
-      }).catch((error) => {
-        console.log(error);
-      });
+      // firebase.database().ref('items/4').set(
+      //   {
+      //     type: 'FL',
+      //     location: 'in my mouth'
+      //   }
+      // ).then(() => {
+      //   console.log('inserted');
+      // }).catch((error) => {
+      //   console.log(error);
+      // });
 
 /*------------------------SELECT FROM DATABASE --------------------------------*/
 // the keyword "once" tells the code to only do the action once
 // the keyword "on" tells the code to do the action evrytime some data changes.
-        firebase.database().ref('items').on('value', (data) => {
-          console.log(data.toJSON());
-        })
+        // firebase.database().ref('items').on('value', (data) => {
+        //   console.log(data.toJSON());
+        // })
 /*------------------------UPDATE INFORMATION --------------------------------*/
-        firebase.database().ref('items/4').update(
-          {
-            ID:'4'
-          }
-        )
+        // firebase.database().ref('items/4').update(
+        //   {
+        //     ID:'4'
+        //   }
+        // )
 
 /*------------------------DELETE INFORMATION --------------------------------*/
       //firebase.database().ref('items/3').remove();
 
 /*------------------------Testing Queries --------------------------------*/
-       var FLref = firebase.database().ref('items');
+       // var FLref = firebase.database().ref('items');
       // ref.orderByChild('ID').equalTo('FL').on('child_added', function(snapshot){
       //   console.log(snapshot.toJSON());
       // })
-      FLref.child('items').orderByChild('type').equalTo('FL').on('value', function(snapshot){
-        console.log(snapshot.val());
-        snapshot.forEach(function(data){
-          console.log(data.key);
-        })
-      })
+      // FLref.child('items').orderByChild('type').equalTo('FL').on('value', function(snapshot){
+      //   console.log(snapshot.val());
+      //   snapshot.forEach(function(data){
+      //     console.log(data.key);
+      //   })
+      // })
+
     };
 
 
@@ -95,6 +99,10 @@ import { SearchBar } from 'react-native-elements';
         </View>
         <KeyboardAvoidingView behaviour="padding">
         </KeyboardAvoidingView>
+/*------------------------   Testing to view intem in db on screen   --------------------------------*/
+
+
+
       </View>
     )
   }
