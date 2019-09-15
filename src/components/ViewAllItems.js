@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking, FlatList, AsyncStorage, KeyboardAvoidingView, Card } from 'react-native';
+import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking, FlatList, AsyncStorage, KeyboardAvoidingView } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 import firebase from 'firebase';
 import { SearchBar } from 'react-native-elements';
@@ -13,7 +13,6 @@ import { SearchBar } from 'react-native-elements';
 //     }
 //   });
 
-  var itm = [];
   class ViewAllItems extends React.Component {
     state = {
       search: '',
@@ -99,10 +98,6 @@ import { SearchBar } from 'react-native-elements';
         </View>
         <KeyboardAvoidingView behaviour="padding">
         </KeyboardAvoidingView>
-/*------------------------   Testing to view intem in db on screen   --------------------------------*/
-
-
-
       </View>
     )
   }
