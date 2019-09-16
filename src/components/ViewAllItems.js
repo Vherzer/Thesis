@@ -3,6 +3,10 @@ import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, But
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 import firebase from 'firebase';
 import { SearchBar } from 'react-native-elements';
+import { db } from './db';
+import ItemComponent from './ItemComponent'
+
+let itemsRef = db.ref('/items');
 
 
 // firebase.auth()
@@ -20,21 +24,31 @@ import { SearchBar } from 'react-native-elements';
     updateSearch = search => {
       this.setState({ search });
     };
+    state = {
+      items:[ ]
+    }
+    componentDidMount(){
+      itemsRef.on('value', (snapshot) => {
+        let data = snapshot.val();
+        let items = Object.values(data);
+        this.setState({items});
+      });
+    }
 
 
 /*-------------------FIREBASE DATABASE MOUTING --------------------------------*/
 
-    componentDidMount(){
-      var firebaseConfig = {
-        apiKey: "AIzaSyCqK9sSq58loq5l-lE3RtDFfNe8jfScT5E",
-        authDomain: "sfk2-cbaef.firebaseapp.com",
-        databaseURL: "https://sfk2-cbaef.firebaseio.com",
-        projectId: "sfk2-cbaef",
-        storageBucket: "",
-        messagingSenderId: "1014798760146",
-        appId: "1:1014798760146:web:43e51c27ddb8131b1a550b"
-      };
-      firebase.initializeApp(firebaseConfig);
+    // componentDidMount(){
+    //   var firebaseConfig = {
+    //     apiKey: "AIzaSyCqK9sSq58loq5l-lE3RtDFfNe8jfScT5E",
+    //     authDomain: "sfk2-cbaef.firebaseapp.com",
+    //     databaseURL: "https://sfk2-cbaef.firebaseio.com",
+    //     projectId: "sfk2-cbaef",
+    //     storageBucket: "",
+    //     messagingSenderId: "1014798760146",
+    //     appId: "1:1014798760146:web:43e51c27ddb8131b1a550b"
+    //   };
+    //   firebase.initializeApp(firebaseConfig);
 
 /*------------------------ADD TO DATABASE -------------------------------------*/
 
@@ -77,13 +91,12 @@ import { SearchBar } from 'react-native-elements';
       //   })
       // })
 
-    };
+  //  };
 
 
 
   render(){
     const { search } = this.state;
-
     return (
       <View style={styles.allitemsContainer}>
         <View style={styles.logoheader}>
@@ -93,9 +106,22 @@ import { SearchBar } from 'react-native-elements';
             />
         </View>
         <Text style={{fontSize:22, textAlign:'center', color: '#FFFFFF', paddingTop: 15}}>Alle Artikel</Text>
-        <View>
-          <SearchBar placeholder= 'Begriff eingeben...'onChangeText= {this.updateSearch} value= {search}/>
+
+        <View style = {styles.lgreycontainer}>
+
+          <View style= {styles.filter}>
+            <SearchBar style= {styles.filter} placeholder= 'Begriff eingeben...'onChangeText= {this.updateSearch} value= {search}/>
+          </View>
+
+          <View>
+               {this.state.items.length > 0 ? (
+                 <ItemComponent items={this.state.items} />
+                ) : (
+                 <Text>No items</Text>
+               )}
+           </View>
         </View>
+
         <KeyboardAvoidingView behaviour="padding">
         </KeyboardAvoidingView>
       </View>
@@ -109,7 +135,21 @@ const styles = StyleSheet.create({
     maxHeight:100,
   },
   allitemsContainer:{
-    backgroundColor: "#252525"
+    backgroundColor: "#252525",
+    height: '100%'
+  },
+  lgreycontainer:{
+    backgroundColor: "#D8DBE3",
+    height: 700,
+    width: 330,
+    alignSelf: 'center',
+    marginTop: 20,
+    padding: 20
+  },
+  filter:{
+    borderRadius: 40,
+    width: 150,
+    color: 'white'
   }
 });
 
