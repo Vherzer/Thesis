@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, TouchableOpacity, TouchableHighlight, TextInput, Linking, Alert } from 'react-native';
 import { Item, Label, Input, Button,} from 'native-base';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
-import Form from 'react-native-form'
-import app from './db'
+import Form from 'react-native-form';
+import app from './db';
 import firebase from 'firebase';
 
 class AddNewItem extends Component{
