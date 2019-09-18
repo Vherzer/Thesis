@@ -13,12 +13,14 @@ class ReportHistory extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      signature: "",
      };
      this.itemsRef = firebase.database().ref().child(`reports`)
   }
 
   pushToFirebase() {
     let formValues = this.refs.itemForm.getValues()
+    formValues.signature = this.state.signature
     if(formValues.dateCreated === "" || formValues.DateCompleted === "" || formValues.signature === "") {
       console.log("Not all fields in the form are populated.")
     } else {
@@ -48,17 +50,23 @@ class ReportHistory extends Component {
             style={{width: '120%', alignSelf: 'flex-start',resizeMode: 'contain'}}
             />
         </View>
+        <View>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('home')}>
+            <Text style={{color:'#FFFFFF', borderWidth: 3, borderColor: '#DE2222', borderRadius:15, textAlign: 'center', height: 30, width: 90, fontSize: 16,  }}> &lt; Zurück</Text>
+          </TouchableOpacity>
+          <Text style={{fontSize:22, textAlign:'center', color: '#FFFFFF'}}>Berichtsverlauf</Text>
+        </View>
         {this.state.isSaved ? <View><Text style={styles.message}> Unterschrift gespeichert</Text></View> :
         <View style={styles.lgreycontainer}>
-          <Text style={{fontSize:22, textAlign:'center', color: '#FFFFFF', paddingTop: 15}}>Berichtsverlauf</Text>
+
 
           <Form ref="itemForm" style={styles.form} >
             <Item floatingLabel style={styles.item}>
-              <Label style={styles.label}>Ort:</Label>
+              <Label style={styles.label}>Datum erstellt:</Label>
               <Input style={styles.input} name="dateCreated" type="TextInput" />
             </Item>
             <Item floatingLabel style={styles.item}>
-              <Label style={styles.label}>Typ:</Label>
+              <Label style={styles.label}>Datum abgeschlossen:</Label>
               <Input style={styles.input} name="DateCompleted" type="TextInput" />
             </Item>
             <View style={styles.signature}>
@@ -133,6 +141,14 @@ const styles = StyleSheet.create({
  },
  signatureLabel: {
    marginLeft: 15, marginTop: 15
+ },
+ message:{
+   alignSelf: 'center',
+   fontSize: 30,
+   borderColor: 'black',
+   borderWidth: 1,
+   width: '50%',
+   textAlign:'center'
  }
 });
 

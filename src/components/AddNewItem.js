@@ -36,7 +36,12 @@ class AddNewItem extends Component{
             style={{width: '120%', alignSelf: 'flex-start',resizeMode: 'contain'}}
             />
         </View>
-
+        <View>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('home')}>
+            <Text style={{color:'#FFFFFF', borderWidth: 3, borderColor: '#DE2222', borderRadius:15, textAlign: 'center', height: 30, width: 90, fontSize: 16,  }}> &lt; Zurück</Text>
+          </TouchableOpacity>
+          
+        </View>
         {this.state.isSaved ? <View><Text style={styles.message}> Artikel hinzugefügt</Text></View> :
           <View style={styles.lgreycontainer}>
             <Text style={{fontSize:22, textAlign:'center',color: '#3A404C', paddingTop: 15}}>Fügen Sie die Artikelinformation ein</Text>
