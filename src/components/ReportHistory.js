@@ -9,7 +9,7 @@ class ReportHistory extends React.Component {
         <View style={styles.logoheader}>
           <Image
             source= {require('../logo.jpg')}
-            style={{height:100}}
+            style={{width: '120%', alignSelf: 'flex-start',resizeMode: 'contain'}}
             />
         </View>
         <Text style={{fontSize:22, textAlign:'center', color: '#FFFFFF', paddingTop: 15}}>Berichtsverlauf</Text>
@@ -22,6 +22,8 @@ class ReportHistory extends React.Component {
 const styles = StyleSheet.create({
   logoheader:{
     maxHeight:100,
+    marginTop: 20,
+    marginBottom: 80
   },
   ReportHistoryContainer:{
     backgroundColor: "#252525"

@@ -33,11 +33,11 @@ class AddNewItem extends Component{
         <View style={styles.logoheader}>
           <Image
             source= {require('../logo.jpg')}
-            style={{height:100}}
+            style={{width: '120%', alignSelf: 'flex-start',resizeMode: 'contain'}}
             />
         </View>
 
-        {this.state.isSaved ? <View style={styles.message}><Text> Item added</Text></View> :
+        {this.state.isSaved ? <View><Text style={styles.message}> Artikel hinzugefügt</Text></View> :
           <View style={styles.lgreycontainer}>
             <Text style={{fontSize:22, textAlign:'center',color: '#3A404C', paddingTop: 15}}>Fügen Sie die Artikelinformation ein</Text>
 
@@ -66,7 +66,7 @@ class AddNewItem extends Component{
               <Label style={styles.label}>Gewicht:</Label>
               <Input style={styles.input} name="weight" type="TextInput" />
             </Item>
-            <Button Block primary onPress={() => this.pushToFirebase()} style={styles.button}><Text style={styles.buttonText}>Add Item</Text></Button>
+            <Button Block primary onPress={() => this.pushToFirebase()} style={styles.button}><Text style={styles.buttonText}>Hinzufügen</Text></Button>
           </Form>
         </View>}
       </View>
@@ -81,6 +81,8 @@ const styles = StyleSheet.create({
   },
   logoheader:{
     maxHeight:100,
+    marginTop: 20,
+    marginBottom: 80
   },
   lgreycontainer:{
     backgroundColor: "#D8DBE3",
@@ -119,8 +121,14 @@ const styles = StyleSheet.create({
   },
   message:{
     alignSelf: 'center',
-    fontSize: 30
-    
+    fontSize: 30,
+    backgroundColor: '#40C057',
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 40,
+    width: '50%',
+    textAlign:'center'
+
   }
 });
 export default AddNewItem;

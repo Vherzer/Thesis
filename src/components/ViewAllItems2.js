@@ -102,7 +102,7 @@ let itemsRef = db.ref('/items');
         <View style={styles.logoheader}>
           <Image
             source= {require('../logo.jpg')}
-            style={{width: '120%', alignSelf: 'flex-start',resizeMode: 'contain'}}
+            style={{height:100}}
             />
         </View>
         <Text style={{fontSize:22, textAlign:'center', color: '#FFFFFF', paddingTop: 15}}>Alle Artikel</Text>
@@ -133,8 +133,6 @@ let itemsRef = db.ref('/items');
 const styles = StyleSheet.create({
   logoheader:{
     maxHeight:100,
-    marginTop: 20,
-    marginBottom: 80
   },
   allitemsContainer:{
     backgroundColor: "#252525",
@@ -151,9 +149,7 @@ const styles = StyleSheet.create({
   filter:{
     borderRadius: 40,
     width: 150,
-    color: 'white',
-    alignSelf: 'flex-end'
-
+    color: 'white'
   }
 });
 

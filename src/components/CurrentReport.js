@@ -18,7 +18,7 @@ class CurrentReport extends React.Component {
         <View style={styles.logoheader}>
           <Image
             source= {require('../logo.jpg')}
-            style={{height:100}}
+            style={{width: '120%', alignSelf: 'flex-start',resizeMode: 'contain'}}
             />
         </View>
 
@@ -43,6 +43,8 @@ class CurrentReport extends React.Component {
 const styles = StyleSheet.create({
   logoheader:{
     maxHeight:100,
+    marginTop: 20,
+    marginBottom: 80
   },
   list:{
     marginVertical: 50,

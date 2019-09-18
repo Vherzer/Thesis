@@ -76,9 +76,12 @@ const styles = StyleSheet.create({
   homecontainer:{
     flex: 1,
     backgroundColor: "#2B2B2B",
+    height: '100%'
   },
   logoheader:{
     maxHeight:60,
+    marginTop: 40,
+    marginBottom: 40
   },
   homeboxes:{
     height:'80%',
