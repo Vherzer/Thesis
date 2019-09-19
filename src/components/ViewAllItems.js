@@ -1,5 +1,5 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking, FlatList, AsyncStorage, KeyboardAvoidingView } from 'react-native';
+import React, { Component }from 'react';
+import { SafeAreaView,StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking, FlatList, AsyncStorage, KeyboardAvoidingView } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 import firebase from 'firebase';
 import { SearchBar } from 'react-native-elements';
@@ -10,28 +10,13 @@ let itemsRef = db.ref('/items');
 
 
 
-  class ViewAllItems extends React.Component {
+  class ViewAllItems extends Component {
     state = {
       search: '',
     };
     updateSearch = search => {
       this.setState({ search });
     };
-    state = {
-      items:[ ]
-    }
-    // componentDidMount(){
-    //   itemsRef.on('value', (snapshot) => {
-    //     let data = snapshot.val();
-    //     let items = Object.values(data);
-    //     this.setState({items});
-    //   });
-    // }
-    readItemData () {
-    firebase.database().ref('items/').on('value', function (snapshot) {
-        console.log(snapshot.val())
-    });
-    }
 
 /*------------------------ADD TO DATABASE -------------------------------------*/
 
@@ -104,8 +89,7 @@ let itemsRef = db.ref('/items');
           </View>
         </View>
         <View>
-          <TouchableOpacity onPress={this.readItemData()}><Text>Press Me</Text>
-          </TouchableOpacity>
+        
         </View>
         <KeyboardAvoidingView behaviour="padding">
         </KeyboardAvoidingView>
