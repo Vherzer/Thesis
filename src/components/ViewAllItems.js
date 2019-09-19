@@ -6,8 +6,28 @@ import { SearchBar } from 'react-native-elements';
 import { db } from './db';
 import ItemComponent from './ItemComponent'
 
-let itemsRef = db.ref('/items');
+let itemsRef = db.ref('items');
+itemsRef.on('value', gotData, errData);
 
+function gotData(data){
+  // console.log(data.val());
+  var scores = data.val();
+  var keys = Object.keys(scores);
+  // console.log(keys);
+  for (var i = 0; i < keys.length; i++){
+    var k = keys[i];
+    var itemtype = scores[k].type;
+    var location = scores[k].location;
+    console.log(itemtype, location);
+    // var li = React.createElement('text', itemtype + '-' + location);
+    //  li.parent('itemlist');
+    // console.log(li);
+  }
+}
+function errData(err){
+  console.log('error');
+  console.log(err);
+}
 
 
   class ViewAllItems extends Component {
@@ -89,7 +109,12 @@ let itemsRef = db.ref('/items');
           </View>
         </View>
         <View>
-        
+        <FlatList
+          
+          renderItem={({item}) => {
+            return <Text style={styles.list}> {item.itemtype} - Type: {item.location}</Text>
+          }}
+        />
         </View>
         <KeyboardAvoidingView behaviour="padding">
         </KeyboardAvoidingView>
