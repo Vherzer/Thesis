@@ -6,7 +6,7 @@ import { SearchBar } from 'react-native-elements';
 import { db } from './db';
 import ItemComponent from './ItemComponent'
 
-let itemsRef = db.ref('/items');
+let itemsRef = db.ref('items');
 
 
 
