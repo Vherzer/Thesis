@@ -13,7 +13,7 @@ class AddNewItem extends Component{
      };
      this.itemsRef = firebase.database().ref().child(`items`)
   }
-
+/***************Called when the user presses the add items button****************/
   pushToFirebase() {
     let formValues = this.refs.itemForm.getValues()
     if(formValues.type === "" || formValues.itemNumber === "" || formValues.floor === ""|| formValues.location === ""|| formValues.modelType === ""|| formValues.weight === "") {
