@@ -4,20 +4,17 @@ import { createAppContainer, createStackNavigator, StackActions, NavigationActio
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
 
-class StartNewReport extends Component {
+class HelpButton extends Component {
 
-/*TEST QR CODE SCANNER*/
-  constructor(props){
-    super(props);
-    this.state = {
-      qrnumber:''
-    }
+  onSuccess = (e) => {
+      Linking
+        .openURL(e.data)
+        .catch(err => console.error('An error occured', err));
   }
-  onBarCodeRead = (e) => this.setState({qrnumber: e.data});
 
   render(){
       return (
-        <View style={styles.startnewreportContainer}>
+        <View style={styles.helpContainer}>
           <View>
             <View style={styles.logoheader}>
               <Image
@@ -36,10 +33,8 @@ class StartNewReport extends Component {
 
             <View style={styles.MainContainer}>
               <QRCodeScanner
-                style={styles.preview}
-                onBarCodeRead={this.onBarCodeRead}
+                onRead={this.onSuccess}
               />
-              <Text style={{color: 'white'}}>{this.state.qrnumber}</Text>
             </View>
 
           </View>
@@ -79,7 +74,7 @@ const styles = StyleSheet.create({
     buttonTouchable: {
       padding: 16,
     },
-  startnewreportContainer:{
+  helpContainer:{
     backgroundColor: "#252525",
     height: '100%'
   },
@@ -90,4 +85,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default StartNewReport;
+export default HelpButton;

@@ -9,13 +9,6 @@ import ItemComponent from './ItemComponent'
 let itemsRef = db.ref('/items');
 
 
-// firebase.auth()
-//   .signInAnonymously()
-//   .then(credential => {
-//     if (credential) {
-//       console.log('default app user ->', credential.user.toJSON());
-//     }
-//   });
 
   class ViewAllItems extends React.Component {
     state = {
@@ -27,35 +20,26 @@ let itemsRef = db.ref('/items');
     state = {
       items:[ ]
     }
-    componentDidMount(){
-      itemsRef.on('value', (snapshot) => {
-        let data = snapshot.val();
-        let items = Object.values(data);
-        this.setState({items});
-      });
+    // componentDidMount(){
+    //   itemsRef.on('value', (snapshot) => {
+    //     let data = snapshot.val();
+    //     let items = Object.values(data);
+    //     this.setState({items});
+    //   });
+    // }
+    readUserData () {
+    firebase.database().ref('items/').on('value', function (snapshot) {
+        console.log(snapshot.val())
+    });
     }
 
-
-/*-------------------FIREBASE DATABASE MOUTING --------------------------------*/
-
-    // componentDidMount(){
-    //   var firebaseConfig = {
-    //     apiKey: "AIzaSyCqK9sSq58loq5l-lE3RtDFfNe8jfScT5E",
-    //     authDomain: "sfk2-cbaef.firebaseapp.com",
-    //     databaseURL: "https://sfk2-cbaef.firebaseio.com",
-    //     projectId: "sfk2-cbaef",
-    //     storageBucket: "",
-    //     messagingSenderId: "1014798760146",
-    //     appId: "1:1014798760146:web:43e51c27ddb8131b1a550b"
-    //   };
-    //   firebase.initializeApp(firebaseConfig);
 
 /*------------------------ADD TO DATABASE -------------------------------------*/
 
       // firebase.database().ref('items/4').set(
       //   {
       //     type: 'FL',
-      //     location: 'in my mouth'
+      //     location: 'in the attic'
       //   }
       // ).then(() => {
       //   console.log('inserted');
@@ -107,8 +91,8 @@ let itemsRef = db.ref('/items');
         </View>
 
         <View>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('home')}>
-            <Text style={{color:'#FFFFFF', borderWidth: 3, borderColor: '#DE2222', borderRadius:15, textAlign: 'center', height: 30, width: 90, fontSize: 16,  }}> &lt; Zurück</Text>
+          <TouchableOpacity style={{paddingLeft: '5%', justifyContent: 'center'}} onPress={() => this.props.navigation.navigate('home')}>
+            <Text style={{color:'#FFFFFF', borderWidth: 3, borderColor: '#DE2222', borderRadius:15, textAlign: 'center', height: 30, width: 80, fontSize: 16, padding:'0.5%' }}> &lt;Zurück</Text>
           </TouchableOpacity>
         </View>
 
@@ -119,16 +103,11 @@ let itemsRef = db.ref('/items');
           <View style= {styles.filter}>
             <SearchBar style= {styles.filter} placeholder= 'Begriff eingeben...'onChangeText= {this.updateSearch} value= {search}/>
           </View>
-
-          <View>
-               {this.state.items.length > 0 ? (
-                 <ItemComponent items={this.state.items} />
-                ) : (
-                 <Text>No items</Text>
-               )}
-           </View>
         </View>
-
+        <View>
+          <TouchableOpacity onPress={this.readUserData()}><Text>Press Me</Text>
+          </TouchableOpacity>
+        </View>
         <KeyboardAvoidingView behaviour="padding">
         </KeyboardAvoidingView>
       </View>

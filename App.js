@@ -9,6 +9,7 @@ import ViewActiveMaintenance from './src/components/ViewActiveMaintenance';
 import CurrentReport from './src/components/CurrentReport';
 import AddNewItem from './src/components/AddNewItem';
 import ReportHistory from './src/components/ReportHistory';
+import HelpButton from './src/components/helpbutton';
 
 class Login extends React.Component {
 
@@ -56,6 +57,7 @@ const AppNavigator = createStackNavigator({
   addnewitem: AddNewItem,
   reporthistory: ReportHistory,
   viewallitems: ViewAllItems,
+  helpbutton: HelpButton,
 },
 {
   initialRouteName: 'home',

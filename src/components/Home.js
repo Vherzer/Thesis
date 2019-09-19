@@ -1,52 +1,62 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import QRCodeScanner from 'react-native-qrcode-scanner';
 
-class Home extends React.Component {
+class Home extends Component {
   render(){
     return (
       <View style={styles.homecontainer}>
 
         <View style={styles.logoheader}>
-          <Image
-            source= {require('../logo.jpg')}
-            />
+          <View>
+            <Image
+              source= {require('../logo.jpg')}
+              />
+          </View>
+        </View>
+        <View>
+          <TouchableOpacity style={{alignItems:'flex-end', marginRight: '5%',textAlign: 'center'}} onPress={() => this.props.navigation.navigate('helpbutton')}>
+            <Text style={{fontSize: RFValue(28),backgroundColor:'black', color:'#DEE2E6', width: 50, height:50, textAlign: 'center', borderRadius:25, paddingTop:5}}>?</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.homeboxes}>
           <View style={styles.homebox}>
               <TouchableOpacity onPress={() => this.props.navigation.navigate('newreport')}>
-                <Text style={{color:'#292929', backgroundColor:'#40C057', textAlign: 'center', height:'100%', fontSize: 20, paddingTop: 40 }}>Neue Wartungsprüfung starten</Text>
+                <Text style={{color:'#292929', backgroundColor:'#40C057', textAlign: 'center', height:'100%', fontSize: RFValue(16), paddingTop: 40 }}>Neue Wartungsprüfung starten</Text>
               </TouchableOpacity>
           </View>
 
           <View style={styles.homebox}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('activemaintenance')}>
-              <Text style={{color:'#292929', backgroundColor:'#FA5252', textAlign: 'center',height:'100%', fontSize: 20, paddingTop: 65}}>Aktive Wartung</Text>
+              <Text style={{color:'#292929', backgroundColor:'#FA5252', textAlign: 'center',height:'100%', fontSize: RFValue(18), paddingTop: 60}}>Aktive Wartung</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.homebox}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('returntocurrentreport')}>
-              <Text style={{color:'#292929', backgroundColor:'#FD7E14', textAlign: 'center',height:'100%', fontSize: 20, paddingTop: 45}}>Zurück zur vorherigen Wartungsprüfung</Text>
+              <Text style={{color:'#292929', backgroundColor:'#FD7E14', textAlign: 'center',height:'100%', fontSize: RFValue(16), paddingTop: 45}}>Zurück zur vorherigen Wartungsprüfung</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.homebox}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('addnewitem')}>
-              <Text style={{color:'#292929', backgroundColor:'#228BE6', textAlign: 'center',height:'100%', fontSize: 20, paddingTop: 60}}>Neuen Artikel hinzufügen</Text>
+              <Text style={{color:'#292929', backgroundColor:'#228BE6', textAlign: 'center',height:'100%', fontSize: RFValue(17), paddingTop: 55}}>Neuen Artikel hinzufügen</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.homebox}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('reporthistory')}>
-              <Text style={{color:'#292929', backgroundColor:'#ffffff', textAlign: 'center',height:'100%', fontSize: 20, paddingTop: 65}}>Berichtsverlauf</Text>
+              <Text style={{color:'#292929', backgroundColor:'#ffffff', textAlign: 'center',height:'100%', fontSize: RFValue(18), paddingTop: 65}}>Berichtsverlauf</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.homebox}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('viewallitems')}>
-              <Text style={{color:'#292929', backgroundColor:'#868E96', textAlign: 'center',height:'100%', fontSize: 20, paddingTop: 60}}>Alle Artikel anzeigen</Text>
+              <Text style={{color:'#292929', backgroundColor:'#868E96', textAlign: 'center',height:'100%', fontSize: RFValue(17), paddingTop: 55}}>Alle Artikel anzeigen</Text>
             </TouchableOpacity>
           </View>
 
@@ -81,19 +91,22 @@ const styles = StyleSheet.create({
   logoheader:{
     maxHeight:60,
     marginTop: 40,
-    marginBottom: 40
+    marginBottom: 40,
   },
   homeboxes:{
     height:'80%',
     flexDirection:'row',
     flexWrap: 'wrap',
-    padding: 15,
-    paddingTop:100,
+    padding: '4.5%',
+    alignItems:'center',
+    paddingTop:'8%',
+    marginTop:'8%',
+    marginLeft:'2%'
   },
   homebox:{
-    width:'50%',
-    height: 200,
-    padding: 15,
+    width: wp('44%'),
+    height: hp('22%'),
+    padding: '2%',
   },
 });
 

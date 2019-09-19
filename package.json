@@ -25,6 +25,8 @@
     "react-native-gesture-handler": "^1.4.1",
     "react-native-permissions": "^1.2.0",
     "react-native-qrcode-scanner": "^1.2.1",
+    "react-native-responsive-fontsize": "^0.2.2",
+    "react-native-responsive-screen": "^1.2.2",
     "react-native-signature": "^1.0.0",
     "react-native-signature-pad": "^0.1.0",
     "react-native-sqlite-storage": "^4.1.0",

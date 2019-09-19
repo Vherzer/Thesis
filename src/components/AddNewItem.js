@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, TouchableOpacity, TouchableHighlight, TextInput, Linking, Alert } from 'react-native';
+import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, TouchableOpacity, TouchableHighlight, TextInput, Linking, Alert, KeyboardAvoidingView } from 'react-native';
 import { Item, Label, Input, Button,} from 'native-base';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 import Form from 'react-native-form';
@@ -37,43 +37,44 @@ class AddNewItem extends Component{
             />
         </View>
         <View>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('home')}>
-            <Text style={{color:'#FFFFFF', borderWidth: 3, borderColor: '#DE2222', borderRadius:15, textAlign: 'center', height: 30, width: 90, fontSize: 16,  }}> &lt; Zurück</Text>
+          <TouchableOpacity style={{paddingLeft: '5%', justifyContent: 'center'}} onPress={() => this.props.navigation.navigate('home')}>
+            <Text style={{color:'#FFFFFF', borderWidth: 3, borderColor: '#DE2222', borderRadius:15, textAlign: 'center', height: 30, width: 80, fontSize: 16, padding:'0.5%' }}> &lt;Zurück</Text>
           </TouchableOpacity>
-          
+
         </View>
+        <KeyboardAvoidingView  behavior="padding">
         {this.state.isSaved ? <View><Text style={styles.message}> Artikel hinzugefügt</Text></View> :
           <View style={styles.lgreycontainer}>
-            <Text style={{fontSize:22, textAlign:'center',color: '#3A404C', paddingTop: 15}}>Fügen Sie die Artikelinformation ein</Text>
-
-          <Form ref="itemForm" style={styles.form} >
-            <Item floatingLabel style={styles.item}>
-              <Label style={styles.label}>Artikel Art:</Label>
-              <Input style={styles.input} name="type" type="TextInput" />
-            </Item>
-            <Item floatingLabel style={styles.item}>
-              <Label style={styles.label}>Nummer:</Label>
-              <Input style={styles.input} name="itemNumber" type="TextInput" />
-            </Item>
-            <Item floatingLabel style={styles.item}>
-              <Label style={styles.label}>Geschoß:</Label>
-              <Input style={styles.input} name="floor" type="TextInput" />
-            </Item>
-            <Item floatingLabel style={styles.item}>
-              <Label style={styles.label}>Ort:</Label>
-              <Input style={styles.input} name="location" type="TextInput" />
-            </Item>
-            <Item floatingLabel style={styles.item}>
-              <Label style={styles.label}>Typ:</Label>
-              <Input style={styles.input} name="modelType" type="TextInput" />
-            </Item>
-            <Item floatingLabel style={styles.item}>
-              <Label style={styles.label}>Gewicht:</Label>
-              <Input style={styles.input} name="weight" type="TextInput" />
-            </Item>
-            <Button Block primary onPress={() => this.pushToFirebase()} style={styles.button}><Text style={styles.buttonText}>Hinzufügen</Text></Button>
-          </Form>
-        </View>}
+            <Text style={{fontSize:22, textAlign:'center',color: '#3A404C', paddingTop: '1%'}}>Fügen Sie die Artikelinformation ein</Text>
+            <Form ref="itemForm" style={styles.form} >
+              <Item floatingLabel style={styles.item}>
+                <Label style={styles.label}>Artikel Art:</Label>
+                <Input style={styles.input} name="type" type="TextInput" />
+              </Item>
+              <Item floatingLabel style={styles.item}>
+                <Label style={styles.label}>Nummer:</Label>
+                <Input style={styles.input} name="itemNumber" type="TextInput" />
+              </Item>
+              <Item floatingLabel style={styles.item}>
+                <Label style={styles.label}>Geschoß:</Label>
+                <Input style={styles.input} name="floor" type="TextInput" />
+              </Item>
+              <Item floatingLabel style={styles.item}>
+                <Label style={styles.label}>Ort:</Label>
+                <Input style={styles.input} name="location" type="TextInput" />
+              </Item>
+              <Item floatingLabel style={styles.item}>
+                <Label style={styles.label}>Typ:</Label>
+                <Input style={styles.input} name="modelType" type="TextInput" />
+              </Item>
+              <Item floatingLabel style={styles.item}>
+                <Label style={styles.label}>Gewicht:</Label>
+                <Input style={styles.input} name="weight" type="TextInput" />
+              </Item>
+              <Button Block primary onPress={() => this.pushToFirebase()} style={styles.button}><Text style={styles.buttonText}>Hinzufügen</Text></Button>
+            </Form>
+          </View>}
+        </KeyboardAvoidingView>
       </View>
     );
   }
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
     height: 550,
     width: 330,
     alignSelf: 'center',
-    marginTop: 20,
+    marginTop: '5%',
     padding: 20
   },
   buttonText:{
