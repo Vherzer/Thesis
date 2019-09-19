@@ -27,12 +27,11 @@ let itemsRef = db.ref('/items');
     //     this.setState({items});
     //   });
     // }
-    readUserData () {
+    readItemData () {
     firebase.database().ref('items/').on('value', function (snapshot) {
         console.log(snapshot.val())
     });
     }
-
 
 /*------------------------ADD TO DATABASE -------------------------------------*/
 
@@ -105,7 +104,7 @@ let itemsRef = db.ref('/items');
           </View>
         </View>
         <View>
-          <TouchableOpacity onPress={this.readUserData()}><Text>Press Me</Text>
+          <TouchableOpacity onPress={this.readItemData()}><Text>Press Me</Text>
           </TouchableOpacity>
         </View>
         <KeyboardAvoidingView behaviour="padding">
