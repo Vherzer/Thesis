@@ -13,7 +13,10 @@ class StartNewReport extends Component {
       qrnumber:''
     }
   }
-  onBarCodeRead = (e) => this.setState({qrnumber: e.data});
+  onBarCodeRead = (e) => {
+    console.log(e.data)
+    // this.setState({qrnumber: e.data}
+  }
 
   render(){
       return (
@@ -37,7 +40,7 @@ class StartNewReport extends Component {
             <View style={styles.MainContainer}>
               <QRCodeScanner
                 style={styles.preview}
-                onBarCodeRead={this.onBarCodeRead}
+                onRead={this.onBarCodeRead}
               />
               <Text style={{color: 'white'}}>{this.state.qrnumber}</Text>
             </View>

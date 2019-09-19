@@ -99,8 +99,8 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     padding: '4.5%',
     alignItems:'center',
-    paddingTop:'8%',
-    marginTop:'8%',
+    paddingTop:'7%',
+    marginTop:'7%',
     marginLeft:'2%'
   },
   homebox:{

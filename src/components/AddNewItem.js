@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, TouchableOpacity, TouchableHighlight, TextInput, Linking, Alert, KeyboardAvoidingView } from 'react-native';
-import { Item, Label, Input, Button,} from 'native-base';
+import { Item, Label, Input, Button, Picker} from 'native-base';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 import Form from 'react-native-form';
 import app from './db';
@@ -26,56 +26,57 @@ class AddNewItem extends Component{
     }
   }
 
-
   render() {
     return (
-      <View style={styles.addnewitemsContainer}>
-        <View style={styles.logoheader}>
-          <Image
-            source= {require('../logo.jpg')}
-            style={{width: '120%', alignSelf: 'flex-start',resizeMode: 'contain'}}
-            />
-        </View>
-        <View>
-          <TouchableOpacity style={{paddingLeft: '5%', justifyContent: 'center'}} onPress={() => this.props.navigation.navigate('home')}>
-            <Text style={{color:'#FFFFFF', borderWidth: 3, borderColor: '#DE2222', borderRadius:15, textAlign: 'center', height: 30, width: 80, fontSize: 16, padding:'0.5%' }}> &lt;Zurück</Text>
-          </TouchableOpacity>
+        <View style={styles.addnewitemsContainer}>
+          <View style={styles.logoheader}>
+            <Image
+              source= {require('../logo.jpg')}
+              style={{width: '120%', alignSelf: 'flex-start',resizeMode: 'contain'}}
+              />
+          </View>
+          <View>
+            <TouchableOpacity style={{paddingLeft: '5%', justifyContent: 'center'}} onPress={() => this.props.navigation.navigate('home')}>
+              <Text style={{color:'#FFFFFF', borderWidth: 3, borderColor: '#DE2222', borderRadius:15, textAlign: 'center', height: 30, width: 80, fontSize: 16, padding:'0.5%' }}> &lt;Zurück</Text>
+            </TouchableOpacity>
 
-        </View>
-        <KeyboardAvoidingView  behavior="padding">
-        {this.state.isSaved ? <View><Text style={styles.message}> Artikel hinzugefügt</Text></View> :
-          <View style={styles.lgreycontainer}>
-            <Text style={{fontSize:22, textAlign:'center',color: '#3A404C', paddingTop: '1%'}}>Fügen Sie die Artikelinformation ein</Text>
-            <Form ref="itemForm" style={styles.form} >
-              <Item floatingLabel style={styles.item}>
-                <Label style={styles.label}>Artikel Art:</Label>
-                <Input style={styles.input} name="type" type="TextInput" />
-              </Item>
-              <Item floatingLabel style={styles.item}>
-                <Label style={styles.label}>Nummer:</Label>
-                <Input style={styles.input} name="itemNumber" type="TextInput" />
-              </Item>
-              <Item floatingLabel style={styles.item}>
-                <Label style={styles.label}>Geschoß:</Label>
-                <Input style={styles.input} name="floor" type="TextInput" />
-              </Item>
-              <Item floatingLabel style={styles.item}>
-                <Label style={styles.label}>Ort:</Label>
-                <Input style={styles.input} name="location" type="TextInput" />
-              </Item>
-              <Item floatingLabel style={styles.item}>
-                <Label style={styles.label}>Typ:</Label>
-                <Input style={styles.input} name="modelType" type="TextInput" />
-              </Item>
-              <Item floatingLabel style={styles.item}>
-                <Label style={styles.label}>Gewicht:</Label>
-                <Input style={styles.input} name="weight" type="TextInput" />
-              </Item>
-              <Button Block primary onPress={() => this.pushToFirebase()} style={styles.button}><Text style={styles.buttonText}>Hinzufügen</Text></Button>
-            </Form>
+          </View>
+          {this.state.isSaved ? <View><Text style={styles.message}> Artikel hinzugefügt</Text></View> :
+            <View style={styles.lgreycontainer}>
+            <ScrollView>
+              <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null}>
+              <Text style={{fontSize:22, textAlign:'center',color: '#3A404C', paddingTop: '1%'}}>Fügen Sie die Artikelinformation ein</Text>
+              <Form ref="itemForm" style={styles.form} >
+                <Item floatingLabel style={styles.item}>
+                  <Label style={styles.label}>Artikel Art:</Label>
+                  <Input style={styles.input} name="type" type="TextInput" />
+                </Item>
+                <Item floatingLabel style={styles.item}>
+                  <Label style={styles.label}>Nummer:</Label>
+                  <Input style={styles.input} name="itemNumber" type="TextInput" />
+                </Item>
+                <Item floatingLabel style={styles.item}>
+                  <Label style={styles.label}>Geschoß:</Label>
+                  <Input style={styles.input} name="floor" type="TextInput" />
+                </Item>
+                <Item floatingLabel style={styles.item}>
+                  <Label style={styles.label}>Ort:</Label>
+                  <Input style={styles.input} name="location" type="TextInput" />
+                </Item>
+                <Item floatingLabel style={styles.item}>
+                  <Label style={styles.label}>Typ:</Label>
+                  <Input style={styles.input} name="modelType" type="TextInput" />
+                </Item>
+                <Item floatingLabel style={styles.item}>
+                  <Label style={styles.label}>Gewicht:</Label>
+                  <Input style={styles.input} name="weight" type="TextInput" />
+                </Item>
+                <Button Block primary onPress={() => this.pushToFirebase()} style={styles.button}><Text style={styles.buttonText}>Hinzufügen</Text></Button>
+              </Form>
+            </KeyboardAvoidingView>
+            </ScrollView>
           </View>}
-        </KeyboardAvoidingView>
-      </View>
+        </View>
     );
   }
 }
@@ -96,7 +97,9 @@ const styles = StyleSheet.create({
     width: 330,
     alignSelf: 'center',
     marginTop: '5%',
-    padding: 20
+    paddingTop: 20,
+    paddingLeft:20,
+    paddingRight: 20
   },
   buttonText:{
     fontSize: 17,
