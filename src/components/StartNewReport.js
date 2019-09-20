@@ -3,7 +3,7 @@ import { AppRegistry, SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBa
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
-
+/*------------------------ Start a new report Class ------------------------------*/
 class StartNewReport extends Component {
 
 /*TEST QR CODE SCANNER*/
@@ -57,6 +57,8 @@ class StartNewReport extends Component {
       );
     }
 }
+
+/*-------------------------------Stylesheet-------------------------------------*/
 
 const styles = StyleSheet.create({
   logoheader:{

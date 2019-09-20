@@ -3,7 +3,7 @@ import { AppRegistry, SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBa
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
-
+/*------------------------ Help button Class ------------------------------*/
 class HelpButton extends Component {
 
   onSuccess = (e) => {
@@ -42,6 +42,8 @@ class HelpButton extends Component {
       );
     }
 }
+
+/*-------------------------------Stylesheet-------------------------------------*/
 
 const styles = StyleSheet.create({
   logoheader:{

@@ -7,7 +7,7 @@ import app from './db';
 import firebase from 'firebase';
 import SignaturePad from 'react-native-signature-pad';
 
-
+/*------------------------ View Report History Class ------------------------------*/
 class ReportHistory extends Component {
 
   constructor(props) {
@@ -86,6 +86,7 @@ class ReportHistory extends Component {
   }
 }
 
+/*-------------------------------Stylesheet-------------------------------------*/
 
 const styles = StyleSheet.create({
   logoheader:{

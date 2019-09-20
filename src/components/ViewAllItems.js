@@ -6,6 +6,8 @@ import { SearchBar } from 'react-native-elements';
 import { db } from './db';
 import ItemComponent from './ItemComponent'
 
+/*-----------------------------Functions--------------------------------------*/
+
 let itemsRef = db.ref('items');
 itemsRef.on('value', gotData, errData);
 
@@ -29,6 +31,7 @@ function errData(err){
   console.log(err);
 }
 
+/*------------------------ View All Items Class ------------------------------*/
 
   class ViewAllItems extends Component {
     state = {
@@ -37,6 +40,8 @@ function errData(err){
     updateSearch = search => {
       this.setState({ search });
     };
+
+//----The blocked out code below was just to practise using firebase ----------//
 
 /*------------------------ADD TO DATABASE -------------------------------------*/
 
@@ -103,26 +108,19 @@ function errData(err){
         <Text style={{fontSize:22, textAlign:'center', color: '#FFFFFF', paddingTop: 15}}>Alle Artikel</Text>
 
         <View style = {styles.lgreycontainer}>
-
           <View style= {styles.filter}>
             <SearchBar style= {styles.filter} placeholder= 'Begriff eingeben...'onChangeText= {this.updateSearch} value= {search}/>
           </View>
+          <View>
+            <Text style={{color:'white'}}> {this.state.itemtype}</Text>
+          </View>
         </View>
-        <View>
-        <FlatList
-          
-          renderItem={({item}) => {
-            return <Text style={styles.list}> {item.itemtype} - Type: {item.location}</Text>
-          }}
-        />
-        </View>
-        <KeyboardAvoidingView behaviour="padding">
-        </KeyboardAvoidingView>
       </View>
     )
   }
 };
 
+/*-------------------------------Stylesheet-------------------------------------*/
 
 const styles = StyleSheet.create({
   logoheader:{
@@ -136,7 +134,7 @@ const styles = StyleSheet.create({
   },
   lgreycontainer:{
     backgroundColor: "#D8DBE3",
-    height: 700,
+    height: 600,
     width: 330,
     alignSelf: 'center',
     marginTop: 20,

@@ -5,6 +5,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
+/*------------------------ Home Class ------------------------------*/
 class Home extends Component {
   render(){
     return (
@@ -75,6 +76,8 @@ class Home extends Component {
     );
   }
 };
+
+/*-------------------------------Stylesheet-------------------------------------*/
 
 const styles = StyleSheet.create({
   container:{

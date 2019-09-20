@@ -6,6 +6,7 @@ import Form from 'react-native-form';
 import app from './db';
 import firebase from 'firebase';
 
+/*------------------------ Add new item Class ------------------------------*/
 class AddNewItem extends Component{
   constructor(props) {
     super(props);
@@ -13,7 +14,7 @@ class AddNewItem extends Component{
      };
      this.itemsRef = firebase.database().ref().child(`items`)
   }
-/***************Called when the user presses the add items button****************/
+/*Called when the user presses the add items button*/
   pushToFirebase() {
     let formValues = this.refs.itemForm.getValues()
     if(formValues.type === "" || formValues.itemNumber === "" || formValues.floor === ""|| formValues.location === ""|| formValues.modelType === ""|| formValues.weight === "") {
@@ -80,6 +81,8 @@ class AddNewItem extends Component{
     );
   }
 }
+
+/*-------------------------------Stylesheet-------------------------------------*/
 
 const styles = StyleSheet.create({
   addnewitemsContainer: {

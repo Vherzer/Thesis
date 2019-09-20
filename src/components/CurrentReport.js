@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking, FlatList } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 
-
+/*------------------------ Current Report Class ------------------------------*/
 class CurrentReport extends React.Component {
   render(){
     return (
@@ -29,7 +29,7 @@ class CurrentReport extends React.Component {
   }
 }
 
-
+/*-------------------------------Stylesheet-------------------------------------*/
 
 const styles = StyleSheet.create({
   logoheader:{

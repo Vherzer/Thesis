@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, Button, TouchableOpacity, Linking } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 
-
+/*------------------------ View Active Maintenance Class ------------------------------*/
 class ViewActiveMaintenance extends React.Component {
   render(){
     return (
@@ -26,6 +26,7 @@ class ViewActiveMaintenance extends React.Component {
   }
 };
 
+/*-----------------------------Stylesheet-------------------------------------*/
 
 const styles = StyleSheet.create({
   logoheader:{
